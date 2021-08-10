@@ -28,9 +28,6 @@ function CreatePost() {
     const [posttext, setposttext] = useState("")
     const classes = useStyles();
     const [open, setOpen] = React.useState(false);
-    const handleClose = () => {
-      setOpen(false);
-    };
     const handleToggle = () => {
       setOpen(!open);
     };
