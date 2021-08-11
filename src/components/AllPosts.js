@@ -42,7 +42,7 @@ function AllPosts() {
     },[])
     return (
         <>
-        <p className="text-4xl font-bold mb-10 ">All Posts</p>
+        <p className="text-4xl  font-bold mb-10 ">All Posts</p>
         <div className="grid grid-flow-row select-none md:grid-cols-2 grid-cols-1 lg:grid-cols-3 gap-10">
             {
                 posts.map((obj)=>{

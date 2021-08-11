@@ -16,7 +16,11 @@ const useStyles = makeStyles((theme) => ({
 
 
 function Post() {
-    const [posttext, setposttext] = useState('# Loading')
+    const [posttext, setposttext] = useState('')
+    const [posttitle, setposttitle] = useState('')
+    const [postauthor, setpostauthor] = useState('')
+    const [postauthorimg, setpostauthorimg] = useState('')
+    const [postauthoremail, setpostauthoremail] = useState('')
     const classes = useStyles();
     const [open, setOpen] = React.useState(false);
     const handleClose = () => {
@@ -34,14 +38,25 @@ function Post() {
         db.collection('posts').doc(postid).get().then((data)=>{
             console.log(data.data());
             setposttext(data.data().posttext)
+            setposttitle(data.data().title)
+            setpostauthor(data.data().author)
+            setpostauthoremail(data.data().authoremail)
+            setpostauthorimg(data.data().authorpic)
             handleClose()
         })
     }, [])
     return (
         <div>
             <Header />
+            <div className="ml-5 md:ml-20 flex -mb-4 md:-mb-10 items-center mt-10">
+              <img className="rounded-full h-10" src={postauthorimg} alt="" />
+              <div className="ml-4">
+                <p className="font-bold text-lg">{posttitle}</p>
+                <p className="font-light"><b>By</b> {postauthor}</p>
+              </div>
+            </div>
             <div className="md:m-20 m-10">
-                <Markdown  children={posttext} />
+                <Markdown className="text-left"  children={posttext} />
             </div>
             <Backdrop className={classes.backdrop} open={open}>
                 <CircularProgress color="inherit" />
