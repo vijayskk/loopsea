@@ -55,7 +55,7 @@ function AllPosts() {
                         </div>
                     )
                 })
-            }
+            }  
         </div>
         <Backdrop className={classes.backdrop} open={open}>
                 <CircularProgress color="inherit" />
