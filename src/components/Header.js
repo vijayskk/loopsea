@@ -10,7 +10,6 @@ import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 function Header() {
     const history = useHistory()
     const [user] = useAuthState(auth)
-    console.log(user);
     return (
         <div>
             <div className="w-full h-20 items-center flex bg-gray-200">

@@ -4,6 +4,7 @@ import Header from './Header'
 import { makeStyles } from '@material-ui/core/styles';
 import Backdrop from '@material-ui/core/Backdrop';
 import CircularProgress from '@material-ui/core/CircularProgress';
+import Comment from './Comment';
 var Markdown = require('react-markdown')
 
 const useStyles = makeStyles((theme) => ({
@@ -16,6 +17,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 function Post() {
+    const [postid, setpostid] = useState('')
     const [posttext, setposttext] = useState('')
     const [posttitle, setposttitle] = useState('')
     const [postauthor, setpostauthor] = useState('')
@@ -37,6 +39,7 @@ function Post() {
         console.log(postid);
         db.collection('posts').doc(postid).get().then((data)=>{
             console.log(data.data());
+            setpostid(postid)
             setposttext(data.data().posttext)
             setposttitle(data.data().title)
             setpostauthor(data.data().author)
@@ -55,9 +58,15 @@ function Post() {
                 <p className="font-light"><b>By</b> {postauthor}</p>
               </div>
             </div>
-            <div className="md:m-20 m-10">
+            <div className="md:m-20 m-5">
                 <Markdown className="text-left"  children={posttext} />
             </div>
+            
+            <div className="ml-5 mt-10 md:ml-20">
+              <Comment postid={postid} handleToggle={handleToggle} handleClose={handleClose} />
+            </div>
+
+
             <Backdrop className={classes.backdrop} open={open}>
                 <CircularProgress color="inherit" />
             </Backdrop>

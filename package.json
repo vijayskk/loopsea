@@ -22,6 +22,7 @@
     "react-scripts": "4.0.3",
     "react-social-login-buttons": "^3.5.0",
     "react-typewriter": "^0.4.1",
+    "timeago-react": "^3.0.3",
     "web-vitals": "^1.1.2"
   },
   "scripts": {

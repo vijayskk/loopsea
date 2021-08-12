@@ -52,11 +52,13 @@ function Profile() {
     },[user,refreshposts])
     const deletePost = (id) =>{
         if (user) {
-            handleToggle()
-            db.collection('posts').doc(id).delete().then(()=>{
-                setrefreshposts(refreshposts + 1)
-                handleClose()
-            })
+            if (confirm("Do you want to delete the post? It cant be undone") == true) {
+                handleToggle()
+                db.collection('posts').doc(id).delete().then(()=>{
+                    setrefreshposts(refreshposts + 1)
+                    handleClose()
+                })
+            }
         }
     }
     if (user) {
@@ -64,15 +66,15 @@ function Profile() {
             <div>
                 <Header />
                 <div className="flex items-center">
-                    <img className="w-40 rounded-full m-20" src={user.photoURL} alt="" />
+                    <img className="w-20 md:w-40 rounded-full ml-5 mt-10 md:mt-20 md:m-20" src={user.photoURL} alt="" />
                     <div>
-                        <p className="text-5xl -ml-10">{user.displayName}</p>
-                        <p className="mt-2 font-light -ml-8">{user.email}</p>
+                        <p className="text-3xl md:text-5xl ml-2 mt-10 md:mt-0 md:-ml-10">{user.displayName}</p>
+                        <p className="mt-2 font-light ml-3 md:-ml-8">{user.email}</p>
                         
                     </div>
                 </div>
-                <p className="ml-20 text-4xl ">My Posts</p>
-                <div className="ml-20 mr-40 mt-10 grid grid-flow-row select-none md:grid-cols-2 grid-cols-1 lg:grid-cols-3 gap-10"> 
+                <p className="mt-10 md:mt-0 ml-5 md:ml-20 text-4xl ">My Posts</p>
+                <div className="ml-5 md:ml-20 mr-5 md:mr-40 mt-10 grid grid-flow-row select-none md:grid-cols-2 grid-cols-1 lg:grid-cols-3 gap-10"> 
                 {
                     posts.map((obj)=>{
                         return (
