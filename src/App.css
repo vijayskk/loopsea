@@ -1,12 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Rochester&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&display=swap');
 h1{
   font-weight: bolder;
   font-size: 50px;
+  margin-bottom: 30px;
 }
 h2{
   font-weight: bold;
   font-size: 20px;
+  margin-bottom: 15px;
 }
 
 .loginbg{
@@ -15,4 +17,31 @@ h2{
 
 .logofont{
   font-family: 'Rochester', cursive;
+}
+hr{
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+code{
+  font-family: 'Courier New', Courier, monospace;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.103);
+  border: solid 0px black;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+a{
+  margin-top: 30px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  color: blue;
+  text-decoration: underline;
+}
+pre{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+blockquote{
+  font-family: 'Playfair Display', serif;
+  font-size: x-large;
 }

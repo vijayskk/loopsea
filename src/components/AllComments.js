@@ -33,13 +33,13 @@ function AllComments({comments,handleClose,handleToggle,postid,refresh,setrefres
                 {
                     comments.map((obj)=>{
                         return (
-                            <div className="flex bg-gray-200 my-4 p-4 mr-5  md:mr-10 rounded-xl items-center">
-                                <img className="rounded-full mr-5 h-10" src={obj.commenterpic} alt="" />
+                            <div key={obj.commentid} className="flex overflow-hidden bg-gray-200 my-4 p-4 mr-5  md:mr-10 rounded-xl items-center">
+                                <img className="rounded-full -mb-10 -mt-10 mr-5 h-10" src={obj.commenterpic} alt="" />
                                 <div className="w-full">
                                     <p className="text-lg md:text-xl w-full">{obj.commentinput}</p>
                                     <div className="flex flex-row">
                                         <p className="text-sm  font-light">From {obj.commentername}</p>
-                                        <p className="ml-4 text-sm font-light"><Timeago minPeriod="0" datetime={obj.date.toDate()} /></p>
+                                        <p className="ml-4 text-sm font-light"><Timeago minperiod="0" datetime={obj.date.toDate()} /></p>
                                     </div>
                                     {( user && obj.commenteremail === user.email)?<div className="float-right -mb-4 md:-mt-4"><IconButton onClick={()=>{
                                     deletePost(obj.commentid)

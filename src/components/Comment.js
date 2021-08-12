@@ -1,5 +1,5 @@
 import { IconButton, TextField } from '@material-ui/core'
-import { Send } from '@material-ui/icons'
+import { PhonePausedOutlined, Send } from '@material-ui/icons'
 import React, { useState } from 'react'
 import { useAuthState } from 'react-firebase-hooks/auth'
 import { auth, db } from '../firebase'
@@ -21,7 +21,6 @@ function Comment({postid , handleToggle , handleClose}) {
                     var id = obj.id
                     getdata = [...getdata,{...obj.data(),commentid:id}]
                 })
-                console.log(getdata);
                 setcomments(getdata)
             })
         }
@@ -63,7 +62,7 @@ function Comment({postid , handleToggle , handleClose}) {
                 <IconButton onClick={addComment} disabled={(commentinput.length === 0)} ><Send style={{fill:"blue"}} /></IconButton>
             </div>
             </div>
-            <AllComments refresh={commentrefresh} setrefresh={setcommentrefresh} postid={postid} handleClose={handleClose} handleToggle={handleToggle} comments={comments} />
+            <AllComments key={postid} refresh={commentrefresh} setrefresh={setcommentrefresh} postid={postid} handleClose={handleClose} handleToggle={handleToggle} comments={comments} />
             <p className="mt-52">Footer Will Be Here</p>
         </div>
     )
