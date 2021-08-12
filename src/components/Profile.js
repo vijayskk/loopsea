@@ -74,24 +74,30 @@ function Profile() {
                     </div>
                 </div>
                 <p className="mt-10 md:mt-0 ml-5 md:ml-20 text-4xl ">My Posts</p>
-                <div className="ml-5 md:ml-20 mr-5 md:mr-40 mt-10 grid grid-flow-row select-none md:grid-cols-2 grid-cols-1 lg:grid-cols-3 gap-10"> 
                 {
-                    posts.map((obj)=>{
-                        return (
-                            <div className="w-full border cursor-pointer border-black rounded-lg  p-5" >
-                                <p className="text-2xl">{obj.title}</p>
-                                <p>By {obj.author}</p>
-                                <div className="float-right -mb-4"><IconButton onClick={()=>{
-                                history.push(`/post?id=${obj.id}`)
-                            }}><OpenInNewIcon style={{fill: "blue"}} /></IconButton></div>
-                                <div className="float-right -mb-4"><IconButton onClick={()=>{
-                                    deletePost(obj.id)
-                                }} ><DeleteForeverIcon style={{fill: "red"}} /></IconButton></div>
-                            </div>
-                        )
-                    })
-                }   
-                </div>
+                    !(posts.length === 0)?
+                    <div className="ml-5 md:ml-20 mr-5 md:mr-40 mt-10 grid grid-flow-row select-none md:grid-cols-2 grid-cols-1 lg:grid-cols-3 gap-10"> 
+                    {
+                        posts.map((obj)=>{
+                            return (
+                                <div className="w-full border cursor-pointer border-black rounded-lg  p-5" >
+                                    <p className="text-2xl">{obj.title}</p>
+                                    <p>By {obj.author}</p>
+                                    <div className="float-right -mb-4"><IconButton onClick={()=>{
+                                    history.push(`/post?id=${obj.id}`)
+                                }}><OpenInNewIcon style={{fill: "blue"}} /></IconButton></div>
+                                    <div className="float-right -mb-4"><IconButton onClick={()=>{
+                                        deletePost(obj.id)
+                                    }} ><DeleteForeverIcon style={{fill: "red"}} /></IconButton></div>
+                                </div>
+                            )
+                        })
+                    
+                    }   
+                    </div>
+                    :
+                    <p className="ml-5 md:ml-20 mt-2 font-light" >No Posts yet</p>
+                }
                 <Backdrop className={classes.backdrop} open={open}>
                 <CircularProgress color="inherit" />
                 </Backdrop>
