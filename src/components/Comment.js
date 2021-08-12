@@ -14,7 +14,7 @@ function Comment({postid , handleToggle , handleClose}) {
     useEffect(()=>{
         console.log("Post id is " + postid);
         if (postid) {
-            db.collection('postreactions').doc(postid).collection('comments').get().then((data)=>{
+            db.collection('postreactions').doc(postid).collection('comments').orderBy("date", "asc").get().then((data)=>{
                 var getdata = []
                 data.forEach(obj=>{
                     // console.log(obj.data())
