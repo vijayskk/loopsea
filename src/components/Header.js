@@ -26,7 +26,7 @@ function Header() {
 
                 {user?<div className="my-auto absolute right-32 md:right-40 cursor-pointer"><IconButton onClick={()=>{
                     history.push('/profile')
-                }}><AccountCircleIcon /></IconButton></div>
+                }}><AccountCircleIcon className="headericon" /></IconButton></div>
                 :
                 null
                 }
@@ -34,7 +34,7 @@ function Header() {
                     auth.signOut().then(()=>{
                         history.push('/login')
                     })
-                }}><ExitToAppIcon /></IconButton></div>:null}
+                }}><ExitToAppIcon className="headericon" /></IconButton></div>:null}
             </div>
         </div>
     )

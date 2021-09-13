@@ -47,7 +47,7 @@ function Comment({postid , handleToggle , handleClose}) {
         <div>
             <div className="flex items-center">
             <TextField
-            className="w-3/4"
+            className="w-3/4 commentinput"
                 id="outlined-multiline-static"
                 label="Add a comment"
                 multiline
