@@ -16,7 +16,7 @@ function Header() {
                 <p className="my-auto logofont ml-10 cursor-pointer font-mono text-4xl" onClick={()=>{
                     history.push('/')
                 }}>Loopsea</p>
-                {!user?<p className="my-auto absolute right-10 select-none font-normal cursor-pointer font-mono text-xl hover:text-gray-500" onClick={()=>{
+                {!user?<p className="my-auto absolute headericon right-10 select-none font-normal cursor-pointer font-mono text-xl hover:text-gray-500" onClick={()=>{
                     history.push('/login')
                 }}>Signin</p>
                 :
