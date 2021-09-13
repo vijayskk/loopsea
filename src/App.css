@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Rochester&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&display=swap');
+
+body::-webkit-scrollbar{
+  display: none;
+}
+
 h1{
   font-weight: bolder;
   font-size: 50px;
@@ -44,4 +49,18 @@ pre{
 blockquote{
   font-family: 'Playfair Display', serif;
   font-size: x-large;
+}
+
+.darkmode--activated .headericon {
+  color: white;
+}
+
+.darkmode--activated .commentinput {
+  color: white;
+  background-color: rgb(87, 59, 59);
+  border-radius: 10px;
+}
+
+.darkmode--activated .commentinput::placeholder {
+  color: white;
 }

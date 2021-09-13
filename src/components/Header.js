@@ -16,7 +16,7 @@ function Header() {
                 <p className="my-auto logofont ml-10 cursor-pointer font-mono text-4xl" onClick={()=>{
                     history.push('/')
                 }}>Loopsea</p>
-                {!user?<p className="my-auto absolute right-10 select-none font-normal cursor-pointer font-mono text-xl hover:text-gray-500" onClick={()=>{
+                {!user?<p className="my-auto absolute headericon right-10 select-none font-normal cursor-pointer font-mono text-xl hover:text-gray-500" onClick={()=>{
                     history.push('/login')
                 }}>Signin</p>
                 :
@@ -26,7 +26,7 @@ function Header() {
 
                 {user?<div className="my-auto absolute right-32 md:right-40 cursor-pointer"><IconButton onClick={()=>{
                     history.push('/profile')
-                }}><AccountCircleIcon /></IconButton></div>
+                }}><AccountCircleIcon className="headericon" /></IconButton></div>
                 :
                 null
                 }
@@ -34,7 +34,7 @@ function Header() {
                     auth.signOut().then(()=>{
                         history.push('/login')
                     })
-                }}><ExitToAppIcon /></IconButton></div>:null}
+                }}><ExitToAppIcon className="headericon" /></IconButton></div>:null}
             </div>
         </div>
     )
