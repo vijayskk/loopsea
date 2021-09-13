@@ -51,16 +51,3 @@ blockquote{
   font-size: x-large;
 }
 
-.darkmode--activated .headericon {
-  color: white;
-}
-
-.darkmode--activated .commentinput {
-  color: white;
-  background-color: rgb(87, 59, 59);
-  border-radius: 10px;
-}
-
-.darkmode--activated .commentinput::placeholder {
-  color: white;
-}
