@@ -26,6 +26,7 @@ function CreatePost() {
     const [user] = useAuthState(auth)
     const history = useHistory()
     const mdParser = new MarkdownIt(/* Markdown-it options */);
+    document.title = "Create post"
     const [title, settitle] = useState("")
     const [posttext, setposttext] = useState("")
     const classes = useStyles();

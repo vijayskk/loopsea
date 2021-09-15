@@ -36,6 +36,7 @@ function AllPosts() {
                 getdata = [...getdata,{...obj.data(),id}]
             })
             console.log(getdata);
+            document.title = "Loopsea posts"
             setposts(getdata)
             handleClose()
         })
