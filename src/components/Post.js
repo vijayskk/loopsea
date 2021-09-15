@@ -104,6 +104,7 @@ function Post() {
             setpostid(postid)
             setposttext(data.data().posttext)
             setposttitle(data.data().title)
+            document.title = data.data().title + " by "+  data.data().author
             setpostauthor(data.data().author)
             setpostauthoremail(data.data().authoremail)
             setpostauthorimg(data.data().authorpic)

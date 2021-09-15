@@ -7,6 +7,7 @@ import { useHistory } from 'react-router';
 function Login() {
     const history = useHistory()
     const [user] = useAuthState(auth)
+    document.title = "Login to Loopsea"
     if (user) {
         history.push('/')
         return null

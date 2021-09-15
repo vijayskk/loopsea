@@ -27,6 +27,9 @@ function Profile() {
     const [refreshposts, setrefreshposts] = useState(1)
     const classes = useStyles();
     const [open, setOpen] = React.useState(false);
+    if (user) {
+        document.title = user.displayName + " (Profile)"
+    }
     const handleClose = () => {
       setOpen(false);
     };
