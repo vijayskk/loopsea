@@ -71,7 +71,7 @@ function Profile() {
                 <div className="flex items-center">
                     <img className="w-20 md:w-40 rounded-full ml-5 mt-10 md:mt-20 md:m-20" src={user.photoURL} alt="" />
                     <div>
-                        <p className="text-3xl md:text-5xl ml-2 mt-10 md:mt-0 md:-ml-10">{user.displayName}</p>
+                        <p className="text-3xl md:text-5xl font-bold ml-2 mt-10 md:mt-0 md:-ml-10">{user.displayName}</p>
                         <p className="mt-2 font-light ml-3 md:-ml-8">{user.email}</p>
                         
                     </div>
@@ -83,9 +83,9 @@ function Profile() {
                     {
                         posts.map((obj)=>{
                             return (
-                                <div className="w-full border cursor-pointer border-black rounded-lg  p-5" >
-                                    <p className="text-2xl">{obj.title}</p>
-                                    <p>By {obj.author}</p>
+                                <div className="w-full border cursor-pointer border-gray-300  p-4 hover:bg-gray-100" >
+                                    <div className="text-2xl font-bold">{obj.title}</div>
+                                    <div className="text-sm">By {obj.author}</div>
                                     <div className="float-right -mb-4"><IconButton onClick={()=>{
                                     history.push(`/post?id=${obj.id}`)
                                 }}><OpenInNewIcon style={{fill: "blue"}} /></IconButton></div>

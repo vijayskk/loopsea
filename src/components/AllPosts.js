@@ -43,16 +43,16 @@ function AllPosts() {
     },[])
     return (
         <>
-        <p className="text-4xl  font-bold mb-10 ">All Posts</p>
+        <div className="text-4xl mt-10 font-bold mb-10 ">All Posts</div>
         <div className="grid grid-flow-row select-none md:grid-cols-2 grid-cols-1 lg:grid-cols-3 gap-10">
             {
                 posts.map((obj)=>{
                     return (
-                        <div className="w-full border cursor-pointer border-black rounded-lg  p-5" onClick={()=>{
+                        <div className="w-full border cursor-pointer hover:bg-gray-100 border-gray-300 p-4" onClick={()=>{
                             history.push(`/post?id=${obj.id}`)
                         }}>
-                            <p className="text-2xl">{obj.title}</p>
-                            <p>By {obj.author}</p>
+                            <div className="text-2xl font-bold">{obj.title}</div>
+                            <div className="text-sm">By {obj.author}</div>
                         </div>
                     )
                 })
