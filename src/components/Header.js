@@ -13,7 +13,7 @@ function Header() {
     return (
         <div>
             <div className="w-full h-20 items-center flex bg-gray-200">
-                <p className="my-auto logofont ml-10 cursor-pointer font-mono text-4xl" onClick={()=>{
+                <p className="my-auto logofont ml-10 cursor-pointer font-sans text-4xl" onClick={()=>{
                     history.push('/')
                 }}>Loopsea</p>
                 {!user?<p className="my-auto absolute headericon right-10 select-none font-normal cursor-pointer font-mono text-xl hover:text-gray-500" onClick={()=>{
