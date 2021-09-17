@@ -69,7 +69,7 @@ function Profile() {
             <div>
                 <Header />
                 <div className="flex items-center">
-                    <img className="w-20 md:w-40 rounded-full ml-5 mt-10 md:mt-20 md:m-20" src={user.photoURL} alt="" />
+                    <img className="w-20 md:w-40 rounded-full ring-8 ring-gray-700 ml-5 mt-10 md:mt-20 md:m-20" src={user.photoURL} alt="" />
                     <div>
                         <p className="text-3xl md:text-5xl font-bold ml-2 mt-10 md:mt-0 md:-ml-10">{user.displayName}</p>
                         <p className="mt-2 font-light ml-3 md:-ml-8">{user.email}</p>

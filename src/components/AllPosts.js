@@ -48,7 +48,7 @@ function AllPosts() {
             {
                 posts.map((obj)=>{
                     return (
-                        <div className="w-full border cursor-pointer hover:bg-gray-100 border-gray-300 p-4" onClick={()=>{
+                        <div className="w-full border cursor-pointer hover:bg-gray-100 border-gray-300 p-4 h-32" onClick={()=>{
                             history.push(`/post?id=${obj.id}`)
                         }}>
                             <div className="text-2xl font-bold">{obj.title}</div>
